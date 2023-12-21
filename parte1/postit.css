@@ -1,0 +1,61 @@
+body {
+	font-family: 'Indie Flower', cursive;
+	background-color: #666666;
+}
+
+.postits-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px;
+}
+
+@keyframes start {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.postit {
+	width: 300px;
+	height: 300px;
+	margin: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-image: linear-gradient(to bottom, transparent 80%, rgba(0, 0, 0, 0.2) 100%);
+	box-shadow: 3px 3px 10px #000000cc;
+	transition: transform 0.3s ease-in-out;
+	animation: start 300ms ease-in 0s;
+}
+
+.postit.yellow {
+	background-color: #fcfcca;
+	transform: rotate(-7deg);
+}
+.postit.green {
+	background-color: #cafacc;
+	transform: rotate(3deg);
+}
+.postit.violet {
+	background-color: #cacafa;
+	transform: rotate(-9deg);
+}
+
+h2 {
+	font-size: 3rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+p {
+	font-size: 1.5rem;
+}
+
+.postit:hover {
+	transform: scale(1.2);
+}
