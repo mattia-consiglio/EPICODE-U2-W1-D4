@@ -8,3 +8,70 @@
 7 ritardare progressivamente l'animazione delle altre 2 parole 
 */
 
+body {
+	font-family: 'Bree Serif', serif;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+#testoAlternato {
+	border: 2px solid #000;
+	padding: 1rem;
+	width: 60%;
+}
+
+p {
+	font-size: 1.5rem;
+	line-height: 1.5em;
+}
+
+.parole {
+	display: inline-flex;
+	flex-direction: column;
+	height: 36px;
+	overflow: clip;
+	color: #6a889c;
+}
+
+@keyframes slide {
+	0% {
+		transform: translatey(0);
+		opacity: 1;
+	}
+	19.99999% {
+		opacity: 1;
+	}
+	20% {
+		opacity: 0;
+		transform: translatey(0);
+	}
+	30% {
+		opacity: 1;
+		transform: translatey(-36px);
+	}
+	79.9999% {
+		opacity: 1;
+	}
+	80% {
+		transform: translatey(-36px);
+		opacity: 0;
+	}
+	90% {
+		opacity: 1;
+		transform: translatey(-72px);
+	}
+	/* 100% {
+		transform: translatey(-72px);
+
+		opacity: 0;
+	} */
+}
+
+.parole i {
+	animation: slide 3s ease-in-out 0s infinite;
+}
